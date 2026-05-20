@@ -108,7 +108,7 @@ async function loadComments() {
   } catch {
     holder.innerHTML = `
       <div class="empty-state">
-        Comments load when this page is opened through the local website server.
+        Comments load when the Question Box API and database connection are available.
       </div>
     `;
   }
