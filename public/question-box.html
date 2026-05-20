@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Question Box | Cultural Connection Program</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-page="question-box">
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a class="brand" href="/">
+          <span class="brand-mark">C</span>
+          <span>Cultural Connection Program</span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="/">Home</a>
+          <a href="background.html">Background</a>
+          <a href="program.html">Program</a>
+          <a href="question-box.html" aria-current="page">Question Box</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section page-title">
+        <p class="eyebrow">Question Box</p>
+        <h1>Send a comment or question</h1>
+        <p class="subhead">
+          This page saves submitted comments to the website server, allowing questions and suggestions to be collected over time.
+        </p>
+      </section>
+
+      <section class="section tight">
+        <div class="question-layout">
+          <form class="content-panel form-grid" data-question-form>
+            <div class="two-col">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" autocomplete="name" placeholder="Optional">
+              </div>
+              <div>
+                <label for="role">Role</label>
+                <select id="role" name="role">
+                  <option>Student</option>
+                  <option>Educator</option>
+                  <option>Elder or community member</option>
+                  <option>Parent or carer</option>
+                  <option>Government or service partner</option>
+                  <option>Community member</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="topic">Topic</label>
+              <select id="topic" name="topic">
+                <option>Cultural immersion</option>
+                <option>Online resources</option>
+                <option>Access and safety</option>
+                <option>Local adaptation</option>
+                <option>Measuring success</option>
+                <option>General question</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message">Comment or question</label>
+              <textarea id="message" name="message" required placeholder="Write a question, suggestion or concern here."></textarea>
+              <p class="helper">Submissions appear below after they are saved.</p>
+            </div>
+
+            <div>
+              <button class="button" type="submit">Send Comment</button>
+              <p class="status" data-form-status aria-live="polite"></p>
+            </div>
+          </form>
+
+          <aside class="content-panel">
+            <h2>Useful Prompts</h2>
+            <p>Questions can be practical, cultural, educational or access-focused.</p>
+            <ul>
+              <li>What would make the program feel safe and respectful?</li>
+              <li>Which local resources should be included?</li>
+              <li>How can students access the site outside class?</li>
+              <li>What would meaningful success look like?</li>
+              <li>How should Elders, educators and community organisations be involved?</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="section">
+          <h2>Submitted Questions</h2>
+          <p class="lead-block">
+            Recently saved comments are shown here. New submissions are added to the top of the list.
+          </p>
+          <div class="comment-list" data-comments aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-wrap">
+        <span>Cultural Connection Program</span>
+        <span>Saved comments live in data/comments.json</span>
+      </div>
+    </footer>
+    <script src="site.js"></script>
+  </body>
+</html>

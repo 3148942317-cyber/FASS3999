@@ -9,6 +9,8 @@ Pages:
 - Program
 - Question Box
 
+Vercel serves the production static files from `public/`.
+
 The Question Box uses:
 
 - `api/comments.js` on Vercel, backed by Upstash Redis.
