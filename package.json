@@ -1,0 +1,9 @@
+{
+  "name": "cultural-connection-program-site",
+  "version": "1.0.0",
+  "description": "A four-page informational website with a persistent question box.",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  }
+}
