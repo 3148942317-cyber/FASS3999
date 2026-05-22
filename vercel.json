@@ -1,5 +1,12 @@
 {
   "outputDirectory": "public",
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/index.html",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     {
       "source": "/",
