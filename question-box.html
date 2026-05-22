@@ -4,19 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Question Box | Cultural Connection Program</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260522w">
   </head>
   <body data-page="question-box">
     <header class="site-header">
       <div class="nav-wrap">
         <a class="brand" href="index.html">
           <span class="brand-mark">C</span>
-          <span>Cultural Connection Program</span>
+          <span>Cultural Connection</span>
         </a>
         <nav class="site-nav" aria-label="Main navigation">
           <a href="index.html">Home</a>
           <a href="background.html">Background</a>
           <a href="program.html">Program</a>
+          <a href="resources.html">Resources</a>
           <a href="question-box.html" aria-current="page">Question Box</a>
         </nav>
       </div>
@@ -25,10 +26,32 @@
     <main>
       <section class="section page-title">
         <p class="eyebrow">Question Box</p>
-        <h1>Send a comment or question</h1>
+        <h1>Ask a question or share a <em>thought</em></h1>
         <p class="subhead">
-          This page saves submitted comments to the website server, allowing questions and suggestions to be collected over time.
+          Questions are collected over time and reviewed by Elders, educators and program coordinators. You do not need to give your name.
         </p>
+      </section>
+
+      <section class="section tight">
+        <div class="question-layout">
+          <div class="lead-block">
+            <p class="eyebrow">Who reads this</p>
+            <h2>How questions are handled</h2>
+            <p>
+              Questions submitted here are reviewed by program coordinators and, where relevant, passed to participating Elders and Aboriginal educators for a considered response. Responses are shared in group sessions rather than individually — this keeps the question box a community space rather than a one-on-one service. Urgent concerns about safety or wellbeing are referred to the school's support team.
+            </p>
+          </div>
+          <aside class="content-panel">
+            <p class="eyebrow">Useful prompts</p>
+            <p>Questions can be practical, cultural, educational or access-focused. For example:</p>
+            <ul>
+              <li>What would make the sessions feel safe and respectful?</li>
+              <li>Which local stories or cultural practices do you want to learn more about?</li>
+              <li>How can we make it easier to access the program from home or in the community?</li>
+              <li>What does a meaningful measure of success look like to you?</li>
+            </ul>
+          </aside>
+        </div>
       </section>
 
       <section class="section tight">
@@ -36,12 +59,13 @@
           <form class="content-panel form-grid" data-question-form>
             <div class="two-col">
               <div>
-                <label for="name">Name</label>
-                <input id="name" name="name" autocomplete="name" placeholder="Optional">
+                <label for="name">Name (optional)</label>
+                <input id="name" name="name" autocomplete="name" placeholder="First name or leave blank">
               </div>
               <div>
-                <label for="role">Role</label>
+                <label for="role">I am a</label>
                 <select id="role" name="role">
+                  <option value="">Select your role</option>
                   <option>Student</option>
                   <option>Educator</option>
                   <option>Elder or community member</option>
@@ -55,8 +79,9 @@
             <div>
               <label for="topic">Topic</label>
               <select id="topic" name="topic">
-                <option>Cultural immersion</option>
-                <option>Online resources</option>
+                <option value="">Select a topic</option>
+                <option>Cultural immersion sessions</option>
+                <option>Online resources and platform</option>
                 <option>Access and safety</option>
                 <option>Local adaptation</option>
                 <option>Measuring success</option>
@@ -65,46 +90,31 @@
             </div>
 
             <div>
-              <label for="message">Comment or question</label>
-              <textarea id="message" name="message" required placeholder="Write a question, suggestion or concern here."></textarea>
-              <p class="helper">Submissions appear below after they are saved.</p>
+              <label for="message">Your question or comment</label>
+              <textarea id="message" name="message" required placeholder="Write your question or thought here..."></textarea>
             </div>
 
             <div>
-              <button class="button" type="submit">Send Comment</button>
+              <button class="button" type="submit">Submit</button>
+              <p class="helper">Submissions are reviewed by program coordinators. Responses are shared in sessions. For urgent concerns, please speak directly with a teacher or school counsellor.</p>
               <p class="status" data-form-status aria-live="polite"></p>
             </div>
           </form>
 
           <aside class="content-panel">
-            <h2>Useful Prompts</h2>
-            <p>Questions can be practical, cultural, educational or access-focused.</p>
-            <ul>
-              <li>What would make the program feel safe and respectful?</li>
-              <li>Which local resources should be included?</li>
-              <li>How can students access the site outside class?</li>
-              <li>What would meaningful success look like?</li>
-              <li>How should Elders, educators and community organisations be involved?</li>
-            </ul>
+            <h2>Submitted Questions</h2>
+            <p class="helper">Recent submissions appear below. New questions are added to the top of the list.</p>
+            <div class="comment-list" data-comments aria-live="polite"></div>
           </aside>
-        </div>
-      </section>
-
-      <section class="band">
-        <div class="section">
-          <h2>Submitted Questions</h2>
-          <p class="lead-block">
-            Recently saved comments are shown here. New submissions are added to the top of the list.
-          </p>
-          <div class="comment-list" data-comments aria-live="polite"></div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="footer-wrap">
-        <span>Cultural Connection Program</span>
-        <span>Saved comments live in data/comments.json</span>
+        <span><strong>Cultural Connection Program</strong> — Mian School, Dubbo NSW</span>
+        <span>A proposal developed as part of FASS 3999 · University of Sydney · 2026</span>
+        <span>This site is an informational prototype. Questions and contributions welcome via the Question Box.</span>
       </div>
     </footer>
     <script src="site.js"></script>

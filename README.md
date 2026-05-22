@@ -1,12 +1,13 @@
 # Cultural Connection Program Website
 
-This is a simple four-page website for the FASS3999 case study project.
+This is a simple five-page website for the FASS3999 case study project.
 
 Pages:
 
 - Home
 - Background
 - Program
+- Resources
 - Question Box
 
 Vercel serves the production static files from `public/`.

@@ -9,10 +9,12 @@ const publicFiles = new Map([
   ["/index.html", "index.html"],
   ["/background.html", "background.html"],
   ["/program.html", "program.html"],
+  ["/resources.html", "resources.html"],
   ["/question-box.html", "question-box.html"],
   ["/styles.css", "styles.css"],
   ["/site.js", "site.js"],
-  ["/assets/connection-lines.svg", "assets/connection-lines.svg"]
+  ["/assets/connection-lines.svg", "assets/connection-lines.svg"],
+  ["/assets/home-connection.png", "assets/home-connection.png"]
 ]);
 
 const commentsPath = path.join(root, "data", "comments.json");
@@ -22,6 +24,7 @@ const contentTypes = {
   ".css": "text/css; charset=utf-8",
   ".js": "application/javascript; charset=utf-8",
   ".svg": "image/svg+xml; charset=utf-8",
+  ".png": "image/png",
   ".json": "application/json; charset=utf-8"
 };
 

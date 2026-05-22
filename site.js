@@ -1,49 +1,99 @@
 const body = document.body;
 
 const programPlans = {
-  year7: [
-    ["Term 1", "Begin with local Country, language and story sessions led by Elders and Aboriginal educators."],
-    ["Term 2", "Map personal learning goals and introduce the digital resource library."],
-    ["Term 3", "Explore totems, local histories and cultural practices through guided activities."],
-    ["Term 4", "Submit reflections and questions for the next immersion session."]
-  ],
-  year8: [
-    ["Session 1", "Deepen local knowledge through place-based learning and family history prompts."],
-    ["Online", "Use the question box to keep conversations active between face-to-face sessions."],
-    ["Session 2", "Connect cultural learning with school belonging and practical support pathways."]
-  ],
-  year9: [
-    ["Workshop", "Hear local Indigenous success stories and discuss strengths, identity and community."],
-    ["Resource check", "Review trusted services, school contacts and community support options."],
-    ["Reflection", "Identify what support is needed to stay engaged with learning."]
-  ],
-  senior: [
-    ["Planning", "Link cultural learning with future pathways, mentoring and locally relevant opportunities."],
-    ["Contribution", "Senior students can help shape resources for younger cohorts."],
-    ["Transition", "Document completed modules, remaining goals and support contacts before graduation."]
-  ]
+  year7: {
+    year: "Year 7 — Program Entry",
+    heading: "Foundations: Country and Community",
+    items: [
+      "Introduction to local Country — place names, geography, seasonal knowledge",
+      "Meeting local Elders and establishing ongoing relationships",
+      "First session: family histories and kinship structures",
+      "Digital platform onboarding — students set up their profile and explore resources",
+      "Second session: totems and Dreaming stories connected to local Country",
+      "Access to the question box — first questions to Elders collected"
+    ]
+  },
+  year8: {
+    year: "Years 8–9 — Deepening Connection",
+    heading: "Language, Ceremony and Cultural Practice",
+    items: [
+      "Introduction to local language — greetings, place names, everyday terms",
+      "Cultural practices: traditional crafts, food preparation, seasonal ceremonies",
+      "Expanded family history project — connection to broader community",
+      "Digital platform: resource library updated with local cultural materials",
+      "Local Indigenous success stories — community leaders, artists, educators, athletes",
+      "Student-led question submissions reviewed and responded to by Elders"
+    ]
+  },
+  year10: {
+    year: "Year 10 — Identity and Pathways",
+    heading: "Connecting Culture to Future",
+    items: [
+      "Reflection sessions: how cultural learning has shaped students' sense of identity",
+      "Connecting cultural strengths to career and education pathways",
+      "Community storytelling — students record and share their own cultural narratives",
+      "Digital platform: testimonies section updated with student contributions",
+      "Peer mentorship — older students in the program connect with incoming Year 7 cohort",
+      "Check-in with educator network on access and engagement barriers"
+    ]
+  },
+  year11: {
+    year: "Years 11–12 — Legacy and Transition",
+    heading: "Leadership and Post-School Readiness",
+    items: [
+      "Students take active roles in facilitating elements of sessions with Elders",
+      "Post-school transition support — scholarships, community programs, employment pathways",
+      "Contribution to the digital resource library for future cohorts",
+      "Graduation ceremony with Elders and community — celebrating cultural journey",
+      "Program evaluation — student, educator, Elder and community partner feedback",
+      "Planning for program continuation and potential expansion to additional schools"
+    ]
+  }
 };
 
 function renderTimeline(key = "year7") {
   const holder = document.querySelector("[data-timeline]");
   if (!holder) return;
-  const steps = programPlans[key] || programPlans.year7;
-  holder.innerHTML = steps
-    .map(
-      ([label, text]) => `
-        <div class="timeline-item">
-          <strong>${label}</strong>
-          <p>${text}</p>
-        </div>
-      `
-    )
-    .join("");
+  const plan = programPlans[key] || programPlans.year7;
+  holder.innerHTML = `
+    <div class="timeline-item timeline-card">
+      <strong>${plan.year}</strong>
+      <p>${plan.heading}</p>
+      <ul>
+        ${plan.items.map((item) => `<li>${item}</li>`).join("")}
+      </ul>
+    </div>
+  `;
 }
 
 const timelineSelect = document.querySelector("[data-timeline-select]");
 if (timelineSelect) {
   renderTimeline(timelineSelect.value);
   timelineSelect.addEventListener("change", () => renderTimeline(timelineSelect.value));
+}
+
+const roleSwitcher = document.querySelector("[data-role-switcher]");
+if (roleSwitcher) {
+  const tabs = [...roleSwitcher.querySelectorAll("[data-role-tab]")];
+  const panels = [...roleSwitcher.querySelectorAll("[data-role-panel]")];
+
+  function showRole(role) {
+    tabs.forEach((tab) => {
+      const selected = tab.dataset.roleTab === role;
+      tab.classList.toggle("active", selected);
+      tab.setAttribute("aria-selected", String(selected));
+    });
+
+    panels.forEach((panel) => {
+      const selected = panel.dataset.rolePanel === role;
+      panel.classList.toggle("active", selected);
+      panel.hidden = !selected;
+    });
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => showRole(tab.dataset.roleTab));
+  });
 }
 
 function escapeText(value) {
@@ -73,7 +123,7 @@ function renderComments(comments) {
   if (!comments.length) {
     holder.innerHTML = `
       <div class="empty-state">
-        No questions have been submitted yet. The first saved comment will appear here.
+        No questions submitted yet. Be the first to ask something.
       </div>
     `;
     return;
@@ -137,7 +187,7 @@ if (questionForm) {
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || "Unable to send the comment.");
       questionForm.reset();
-      status.textContent = "Saved. Your question is now in the box.";
+      status.textContent = "Thank you — your question has been saved and will be reviewed.";
       await loadComments();
     } catch (error) {
       status.textContent = error.message || "The comment could not be saved.";

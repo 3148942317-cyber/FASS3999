@@ -4,19 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Program | Cultural Connection Program</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260522w">
   </head>
   <body data-page="program">
     <header class="site-header">
       <div class="nav-wrap">
         <a class="brand" href="index.html">
           <span class="brand-mark">C</span>
-          <span>Cultural Connection Program</span>
+          <span>Cultural Connection</span>
         </a>
         <nav class="site-nav" aria-label="Main navigation">
           <a href="index.html">Home</a>
           <a href="background.html">Background</a>
           <a href="program.html" aria-current="page">Program</a>
+          <a href="resources.html">Resources</a>
           <a href="question-box.html">Question Box</a>
         </nav>
       </div>
@@ -24,32 +25,69 @@
 
     <main>
       <section class="section page-title">
-        <p class="eyebrow">Program</p>
-        <h1>Two-pronged cultural connection</h1>
+        <p class="eyebrow">Program Design</p>
+        <h1>Two-pronged <em>cultural connection</em></h1>
         <p class="subhead">
-          The model starts with one Year 7 cohort at Mian School in Dubbo, then follows the cohort through graduation with recurring cultural sessions and online support.
+          A Year 7 cohort at Mian School, tracked through to graduation — combining face-to-face cultural immersion with a persistent digital platform.
         </p>
+      </section>
+
+      <section class="section tight">
+        <div class="plain-section">
+          <p class="eyebrow">Viewing as</p>
+        </div>
+        <div class="role-switcher" data-role-switcher>
+          <div class="role-tabs" role="tablist" aria-label="Choose visitor role">
+            <button class="role-tab active" type="button" role="tab" aria-selected="true" aria-controls="role-student" data-role-tab="student">Student</button>
+            <button class="role-tab" type="button" role="tab" aria-selected="false" aria-controls="role-educator" data-role-tab="educator">Educator / Elder</button>
+            <button class="role-tab" type="button" role="tab" aria-selected="false" aria-controls="role-partner" data-role-tab="partner">Government / Partner</button>
+          </div>
+          <article class="role-panel active" id="role-student" role="tabpanel" data-role-panel="student">
+            <p class="eyebrow">For students</p>
+            <p>This program is built around you — your culture, your community, your future. Twice a year you will spend time with local Elders learning about your Country. Between those sessions, this website keeps everything connected.</p>
+          </article>
+          <article class="role-panel" id="role-educator" role="tabpanel" data-role-panel="educator" hidden>
+            <p class="eyebrow">For educators and Elders</p>
+            <p>Your leadership is central to this program. Sessions are shaped by local Elders and Aboriginal educators. The digital platform supports facilitation between face-to-face contact and provides access guidance for rural communities.</p>
+          </article>
+          <article class="role-panel" id="role-partner" role="tabpanel" data-role-panel="partner" hidden>
+            <p class="eyebrow">For government and partner organisations</p>
+            <p>This site is the proposal. The pilot targets one Year 7 cohort at Mian School, Dubbo, followed through to Year 12. The digital layer makes the model scalable to any rural or regional school without significant additional cost.</p>
+          </article>
+        </div>
       </section>
 
       <section class="section tight">
         <div class="program-grid">
           <div class="content-panel">
-            <h2>1. In-Person Cultural Immersion</h2>
+            <p class="eyebrow">01</p>
+            <h2>In-Person Cultural Immersion</h2>
             <p>
-              Students participate in guided sessions twice a year with local Elders and Aboriginal educators. The sessions focus on local Country, language, totems, Dreaming stories, family histories, cultural practices and local Indigenous success stories.
+              Twice-yearly guided sessions with local Elders and Aboriginal educators. Sessions are shaped by local Country and community, not a generic national curriculum.
             </p>
-            <p>
-              The pilot is designed for a Year 7 cohort and can continue with the same students through graduation.
-            </p>
+            <ul>
+              <li>Local Country and place names</li>
+              <li>Language and oral tradition</li>
+              <li>Totems and Dreaming stories</li>
+              <li>Family histories and kinship structures</li>
+              <li>Cultural practices and ceremony</li>
+              <li>Local Indigenous success stories</li>
+            </ul>
           </div>
           <div class="content-panel">
-            <h2>2. Digital Support Platform</h2>
+            <p class="eyebrow">02</p>
+            <h2>Digital Support Platform</h2>
             <p>
-              The website keeps cultural learning visible between sessions. It can hold a resource library, a program timeline, short testimonies, access guidance and a moderated question box.
+              This website keeps cultural learning visible between sessions. It is accessible via school computers, libraries, and public spaces — designed for rural access realities.
             </p>
-            <p>
-              Access can be supported through school computers, libraries and other trusted public spaces.
-            </p>
+            <ul>
+              <li>Program timeline personalised by year level</li>
+              <li>Resource library linking cultural and support services</li>
+              <li>Moderated question box with Elder responses</li>
+              <li>Indigenous community testimonies</li>
+              <li>Educator and Elder facilitation guides</li>
+              <li>Access guidance for remote communities</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -58,17 +96,18 @@
         <div class="section">
           <div class="split-grid">
             <div>
-              <h2>Student Pathway</h2>
+              <p class="eyebrow">Student Journey</p>
+              <h2>Year-by-year program timeline</h2>
               <p class="lead-block">
-                The timeline below shows how the program can stay consistent while adapting to a student's year level.
+                Select a stage to see what students engage with at each point in their six-year journey from Year 7 to graduation.
               </p>
               <div class="select-row">
                 <label for="year-select">Choose a stage</label>
                 <select id="year-select" data-timeline-select>
-                  <option value="year7">Year 7 start</option>
-                  <option value="year8">Year 8-9 continuation</option>
-                  <option value="year9">Middle years support</option>
-                  <option value="senior">Senior pathway</option>
+                  <option value="year7">Year 7</option>
+                  <option value="year8">Year 8–9</option>
+                  <option value="year10">Year 10</option>
+                  <option value="year11">Year 11–12</option>
                 </select>
               </div>
             </div>
@@ -79,50 +118,85 @@
 
       <section class="section">
         <div class="plain-section">
-          <h2>Program Elements</h2>
-          <div class="step-grid">
-            <article class="step">
-              <h3>Local Knowledge</h3>
-              <p>Learning is shaped by local Elders, local Country and the cultural context of the school community.</p>
+          <p class="eyebrow">Community Voices</p>
+          <h2>Why cultural connection matters</h2>
+          <p>
+            These perspectives from the broader community reflect the importance of the approach this program takes. Testimonies from Mian School participants will be added as the program develops.
+          </p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <p>Reconnecting young people to Country gives them something to stand on. When you know where you come from, you know who you are. That knowledge has always been protective.</p>
+            <p class="helper">Elder, Wiradjuri Country</p>
+          </article>
+          <article class="feature">
+            <p>The students who stay connected to culture are the ones who stay connected to school. It is not separate things. It is the same thing.</p>
+            <p class="helper">Aboriginal educator, regional NSW</p>
+          </article>
+          <article class="feature">
+            <p>Testimonies from Mian School students, Elders and families will appear here as the program develops. Questions and contributions welcome via the Question Box.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="section">
+          <div class="plain-section">
+            <p class="eyebrow">Intended Impact</p>
+            <h2>What success looks like</h2>
+          </div>
+          <div class="impact-grid">
+            <article class="impact-card">
+              <span class="impact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false"><path d="M4 10.5 12 6l8 4.5-8 4.5-8-4.5Z"/><path d="M6.5 12v4.5c1.4 1 3.2 1.5 5.5 1.5s4.1-.5 5.5-1.5V12"/><path d="M20 10.5V16"/></svg>
+              </span>
+              <div>
+                <h3>School Engagement</h3>
+                <p>Reduced truancy, suspension and early school leaving among program participants compared to school-wide and state averages.</p>
+              </div>
             </article>
-            <article class="step">
-              <h3>Resource Library</h3>
-              <p>Students and educators can access trusted services, partner organisations and cultural learning materials.</p>
+            <article class="impact-card">
+              <span class="impact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="8"/><path d="M4 12h16"/><path d="M12 4c2 2.3 3 5 3 8s-1 5.7-3 8"/><path d="M12 4c-2 2.3-3 5-3 8s1 5.7 3 8"/></svg>
+              </span>
+              <div>
+                <h3>Cultural Identity</h3>
+                <p>Students report a stronger sense of cultural belonging, connection to Country and relationship with community — measured through qualitative cohort check-ins.</p>
+              </div>
             </article>
-            <article class="step">
-              <h3>Question Box</h3>
-              <p>Questions are collected over time so students can keep engaging between face-to-face sessions.</p>
+            <article class="impact-card">
+              <span class="impact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false"><path d="M7 11.5 10 14l4.5-5"/><path d="M4 19V8.5A2.5 2.5 0 0 1 6.5 6H9l3-2 3 2h2.5A2.5 2.5 0 0 1 20 8.5V19H4Z"/></svg>
+              </span>
+              <div>
+                <h3>Community Trust</h3>
+                <p>Increased trust between students, school staff, Elders and families — evidenced through participation rates and educator feedback.</p>
+              </div>
             </article>
-            <article class="step">
-              <h3>Educator Support</h3>
-              <p>Teachers and participating Elders can view guidance for access, facilitation and local adaptation.</p>
-            </article>
-            <article class="step">
-              <h3>Scalable Pilot</h3>
-              <p>The model begins with one cohort, then can be adapted for other rural and regional schools.</p>
-            </article>
-            <article class="step">
-              <h3>Long-Term Impact</h3>
-              <p>The goal is stronger cultural identity, student engagement, school trust and community connection.</p>
+            <article class="impact-card">
+              <span class="impact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false"><path d="M4 19h16"/><path d="M6 16V9"/><path d="M12 16V5"/><path d="M18 16v-4"/><path d="M8 9h-4l2-4 2 4Z"/><path d="M14 5h-4l2-4 2 4Z"/></svg>
+              </span>
+              <div>
+                <h3>Scalable Model</h3>
+                <p>The digital layer allows the model to be adapted for other rural and regional schools without full rebuilding — one platform, locally shaped content.</p>
+              </div>
             </article>
           </div>
-        </div>
-        <div class="content-panel">
-          <h2>Intended Impact</h2>
-          <p>
-            The program responds to the limits of reactive justice responses by building belonging and support earlier. It aims to reduce conditions that can contribute to youth offending and later incarceration.
-          </p>
-          <p>
-            Its value depends on local leadership, careful access planning, clear safeguarding and meaningful measures of engagement rather than superficial participation counts.
-          </p>
+          <div class="content-panel callout-panel">
+            <p>
+              <strong>Note on measurement:</strong> Meaningful success is not captured by participation counts alone. Evaluation should centre student-reported wellbeing, Elder and community assessments of cultural depth, and long-term tracking of school completion and justice-system contact — conducted in partnership with the Mian School community, not externally imposed.
+            </p>
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="footer-wrap">
-        <span>Cultural Connection Program</span>
-        <span>Program design and timeline</span>
+        <span><strong>Cultural Connection Program</strong> — Mian School, Dubbo NSW</span>
+        <span>A proposal developed as part of FASS 3999 · University of Sydney · 2026</span>
+        <span>This site is an informational prototype. Questions and contributions welcome via the Question Box.</span>
       </div>
     </footer>
     <script src="site.js"></script>
