@@ -4,9 +4,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Question Box | Cultural Connection Program</title>
-    <link rel="stylesheet" href="styles.css?v=20260522w">
+    <link rel="stylesheet" href="styles.css?v=20260524d">
   </head>
   <body data-page="question-box">
+    <div class="entry-gate" data-entry-gate role="dialog" aria-modal="true" aria-labelledby="entry-title">
+      <div class="gate-card">
+        <p class="gate-subtitle">Dubbo, NSW · Mian School Pilot</p>
+        <h1 id="entry-title">Cultural Connection Program</h1>
+        <div class="gate-line" aria-hidden="true"></div>
+        <p class="gate-prompt">Who are you visiting as?</p>
+        <div class="gate-buttons">
+          <button type="button" data-role-choice="student" data-role-label="Student">Student</button>
+          <button type="button" data-role-choice="educator" data-role-label="Educator or Elder">Educator or Elder</button>
+          <button type="button" data-role-choice="partner" data-role-label="Government or Partner">Government or Partner</button>
+          <button type="button" data-role-choice="community" data-role-label="Community Member">Community Member</button>
+        </div>
+      </div>
+    </div>
     <header class="site-header">
       <div class="nav-wrap">
         <a class="brand" href="index.html">
@@ -20,6 +34,10 @@
           <a href="resources.html">Resources</a>
           <a href="question-box.html" aria-current="page">Question Box</a>
         </nav>
+        <div class="visitor-pill" data-visitor-pill hidden>
+          <span data-visitor-role></span>
+          <button type="button" data-change-role>Change</button>
+        </div>
       </div>
     </header>
 
@@ -40,6 +58,9 @@
             <p>
               Questions submitted here are reviewed by program coordinators and, where relevant, passed to participating Elders and Aboriginal educators for a considered response. Responses are shared in group sessions rather than individually — this keeps the question box a community space rather than a one-on-one service. Urgent concerns about safety or wellbeing are referred to the school's support team.
             </p>
+            <div class="safeguard-note">
+              <p>This question box is not a crisis, counselling or legal support service. It is for program feedback, cultural questions, access issues and learning support. Any safety, wellbeing or mandatory-reporting concern will be referred to Mian School’s existing wellbeing procedures.</p>
+            </div>
           </div>
           <aside class="content-panel">
             <p class="eyebrow">Useful prompts</p>

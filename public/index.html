@@ -4,9 +4,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cultural Connection Program</title>
-    <link rel="stylesheet" href="styles.css?v=20260522w">
+    <link rel="stylesheet" href="styles.css?v=20260524d">
   </head>
   <body data-page="home">
+    <div class="entry-gate" data-entry-gate role="dialog" aria-modal="true" aria-labelledby="entry-title">
+      <div class="gate-card">
+        <p class="gate-subtitle">Dubbo, NSW · Mian School Pilot</p>
+        <h1 id="entry-title">Cultural Connection Program</h1>
+        <div class="gate-line" aria-hidden="true"></div>
+        <p class="gate-prompt">Who are you visiting as?</p>
+        <div class="gate-buttons">
+          <button type="button" data-role-choice="student" data-role-label="Student">Student</button>
+          <button type="button" data-role-choice="educator" data-role-label="Educator or Elder">Educator or Elder</button>
+          <button type="button" data-role-choice="partner" data-role-label="Government or Partner">Government or Partner</button>
+          <button type="button" data-role-choice="community" data-role-label="Community Member">Community Member</button>
+        </div>
+      </div>
+    </div>
     <header class="site-header">
       <div class="nav-wrap">
         <a class="brand" href="index.html">
@@ -20,6 +34,10 @@
           <a href="resources.html">Resources</a>
           <a href="question-box.html">Question Box</a>
         </nav>
+        <div class="visitor-pill" data-visitor-pill hidden>
+          <span data-visitor-role></span>
+          <button type="button" data-change-role>Change</button>
+        </div>
       </div>
     </header>
 
@@ -44,19 +62,19 @@
       <section class="stat-row" aria-label="Key context figures">
         <div class="stat">
           <strong>32%</strong>
-          <span>of Australia's prison population is First Nations — yet only 3% of the national population</span>
+          <span>First Nations people make up 32% of Australia's prison population, compared with about 3% of the national population.</span>
         </div>
         <div class="stat">
           <strong>88%</strong>
-          <span>of youth in custody had been suspended from school at least once</span>
+          <span>88% of young people in custody had experienced at least one school suspension.</span>
         </div>
         <div class="stat">
           <strong>80%+</strong>
-          <span>of offending youth were not engaged in the school system at the time of offending</span>
+          <span>More than 80% of young people who offended were not engaged in school at the time.</span>
         </div>
         <div class="stat">
           <strong>39%</strong>
-          <span>of First Nations Australians aged 20+ had completed Year 12 as of 2021</span>
+          <span>In 2021, 39% of First Nations Australians aged 20+ had completed Year 12.</span>
         </div>
       </section>
 
@@ -130,7 +148,7 @@
             <p>
               The most significant driver of Indigenous contact with the criminal justice system was their "disadvantaged and unequal position in wider society" — a condition shaped by colonisation and intergenerational trauma.
             </p>
-            <p class="helper">— Royal Commission into Aboriginal Deaths in Custody, 1991 (via UNAA, 2021)</p>
+            <p class="helper reference">Royal Commission into Aboriginal Deaths in Custody, 1991 (via UNAA, 2021)</p>
           </div>
         </div>
       </section>
@@ -188,5 +206,6 @@
         <span>This site is an informational prototype. Questions and contributions welcome via the Question Box.</span>
       </div>
     </footer>
+    <script src="site.js"></script>
   </body>
 </html>

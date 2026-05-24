@@ -4,9 +4,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Program | Cultural Connection Program</title>
-    <link rel="stylesheet" href="styles.css?v=20260522w">
+    <link rel="stylesheet" href="styles.css?v=20260524d">
   </head>
   <body data-page="program">
+    <div class="entry-gate" data-entry-gate role="dialog" aria-modal="true" aria-labelledby="entry-title">
+      <div class="gate-card">
+        <p class="gate-subtitle">Dubbo, NSW · Mian School Pilot</p>
+        <h1 id="entry-title">Cultural Connection Program</h1>
+        <div class="gate-line" aria-hidden="true"></div>
+        <p class="gate-prompt">Who are you visiting as?</p>
+        <div class="gate-buttons">
+          <button type="button" data-role-choice="student" data-role-label="Student">Student</button>
+          <button type="button" data-role-choice="educator" data-role-label="Educator or Elder">Educator or Elder</button>
+          <button type="button" data-role-choice="partner" data-role-label="Government or Partner">Government or Partner</button>
+          <button type="button" data-role-choice="community" data-role-label="Community Member">Community Member</button>
+        </div>
+      </div>
+    </div>
     <header class="site-header">
       <div class="nav-wrap">
         <a class="brand" href="index.html">
@@ -20,6 +34,10 @@
           <a href="resources.html">Resources</a>
           <a href="question-box.html">Question Box</a>
         </nav>
+        <div class="visitor-pill" data-visitor-pill hidden>
+          <span data-visitor-role></span>
+          <button type="button" data-change-role>Change</button>
+        </div>
       </div>
     </header>
 
@@ -89,6 +107,54 @@
               <li>Access guidance for remote communities</li>
             </ul>
           </div>
+        </div>
+      </section>
+
+      <section class="section tight">
+        <div class="plain-section">
+          <p class="eyebrow">Implementation Roles</p>
+          <h2>Who does what?</h2>
+          <p>A practical intervention needs role clarity.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="role-table">
+            <thead>
+              <tr>
+                <th>Stakeholder</th>
+                <th>Practical role</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mian School</td>
+                <td>Select cohort, provide rooms, supervise students, schedule sessions</td>
+              </tr>
+              <tr>
+                <td>Local Elders</td>
+                <td>Guide cultural content and determine what knowledge can be shared</td>
+              </tr>
+              <tr>
+                <td>Aboriginal educators</td>
+                <td>Help translate cultural learning into school engagement activities</td>
+              </tr>
+              <tr>
+                <td>Program coordinator</td>
+                <td>Manage timetable, question box, consent, resources and evaluation</td>
+              </tr>
+              <tr>
+                <td>Students</td>
+                <td>Attend sessions, use the question box, contribute feedback</td>
+              </tr>
+              <tr>
+                <td>Families/carers</td>
+                <td>Optional involvement in feedback and community events</td>
+              </tr>
+              <tr>
+                <td>NSW Government/partners</td>
+                <td>Provide funding, digital access support and evaluation support</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 

@@ -4,9 +4,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Background | Cultural Connection Program</title>
-    <link rel="stylesheet" href="styles.css?v=20260522w">
+    <link rel="stylesheet" href="styles.css?v=20260524d">
   </head>
   <body data-page="background">
+    <div class="entry-gate" data-entry-gate role="dialog" aria-modal="true" aria-labelledby="entry-title">
+      <div class="gate-card">
+        <p class="gate-subtitle">Dubbo, NSW · Mian School Pilot</p>
+        <h1 id="entry-title">Cultural Connection Program</h1>
+        <div class="gate-line" aria-hidden="true"></div>
+        <p class="gate-prompt">Who are you visiting as?</p>
+        <div class="gate-buttons">
+          <button type="button" data-role-choice="student" data-role-label="Student">Student</button>
+          <button type="button" data-role-choice="educator" data-role-label="Educator or Elder">Educator or Elder</button>
+          <button type="button" data-role-choice="partner" data-role-label="Government or Partner">Government or Partner</button>
+          <button type="button" data-role-choice="community" data-role-label="Community Member">Community Member</button>
+        </div>
+      </div>
+    </div>
     <header class="site-header">
       <div class="nav-wrap">
         <a class="brand" href="index.html">
@@ -20,6 +34,10 @@
           <a href="resources.html">Resources</a>
           <a href="question-box.html">Question Box</a>
         </nav>
+        <div class="visitor-pill" data-visitor-pill hidden>
+          <span data-visitor-role></span>
+          <button type="button" data-change-role>Change</button>
+        </div>
       </div>
     </header>
 
@@ -32,42 +50,17 @@
         </p>
       </section>
 
-      <section class="section tight">
-        <div class="plain-section">
-          <p class="eyebrow">Philosophical Grounding</p>
-          <h2>The moral obligation to intervene</h2>
+      <section class="section tight" data-background-tabs>
+        <div class="background-tab-list" role="tablist" aria-label="Background sections">
+          <button class="background-tab active" type="button" role="tab" aria-selected="true" aria-controls="background-policy" data-background-tab="policy">Policy Background</button>
+          <button class="background-tab" type="button" role="tab" aria-selected="false" aria-controls="background-philosophy" data-background-tab="philosophy">Philosophical Background</button>
+          <button class="background-tab" type="button" role="tab" aria-selected="false" aria-controls="background-international" data-background-tab="international">International Case Studies</button>
         </div>
-        <div class="split-grid">
-          <article class="content-panel">
-            <p class="eyebrow">Rawlsian Justice</p>
-            <h3>A Theory of Justice — John Rawls (2009)</h3>
-            <p>
-              Rawls holds that social and economic inequalities may only be permitted if they result in the bettering of the least advantaged. Applied to the overrepresentation of First Nations Australians in the criminal justice system — a direct result of systemic social and economic inequality — existing conditions fail this test. The disadvantaged are not advantaged by present inequalities; they are further constrained by them.
-            </p>
-            <p>
-              Rawls' concept of the "veil of ignorance" — designing systems without knowing one's place within them — reveals Australia's criminal justice system as one constructed without such impartiality. The existence of organisations addressing the injustices that result from this gap is itself evidence of systemic failure.
-            </p>
-            <p class="helper">Rawls, J. (2009). A Theory of Justice. Harvard University Press.</p>
-          </article>
-          <article class="content-panel">
-            <p class="eyebrow">Structural Theory</p>
-            <h3>Structuration Theory — Giddens (1984)</h3>
-            <p>
-              Giddens holds that social structures are not external constraints imposed on individuals, but are reproduced through everyday institutional practices. In the context of incarceration, institutions including policing, courts, child protection and housing continually reproduce disadvantage for First Nations communities. The system does not simply reflect inequality — it perpetuates it.
-            </p>
-            <p>
-              When assessed against five power resources — political rights, official positions, coercive power, mobilisation power, and material power — Indigenous Australians are systematically disenfranchised across all five, leaving their capacity to reshape these structures largely out of reach.
-            </p>
-            <p class="helper">Winter, 2009 (as cited in background research); Giddens, A. (1984). The Constitution of Society. Polity Press.</p>
-          </article>
-        </div>
-      </section>
 
-      <section class="band">
-        <div class="section">
+        <div class="background-panel active" id="background-policy" role="tabpanel" data-background-panel="policy">
           <div class="plain-section">
-            <p class="eyebrow">Historical Factors</p>
-            <h2>Colonialism and the carceral system</h2>
+            <p class="eyebrow">Policy Context</p>
+            <h2>Colonialism, Closing the Gap and education outcomes</h2>
           </div>
           <div class="split-grid">
             <div class="lead-block">
@@ -78,73 +71,94 @@
                 A post-colonial lens reveals that Australia's carceral system operates as an extension of colonial governance — historically functioning to manage, surveil and contain Indigenous populations rather than deliver justice. The dispossession of land, the removal of children through successive assimilationist policies, and the erosion of cultural authority constitute a continuum of state violence that prefigures present-day overrepresentation.
               </p>
               <p>
-                From this perspective, incarceration is not a failure of the system but a feature of it — an extension of deep-rooted inequalities that reproduce colonial hierarchies under the authority of law.
+                The National Agreement on Closing the Gap (2020) targets educational parity between First Nations and non-Indigenous Australians. Outcome 6 aims for students to "achieve their full learning potential"; Outcome 5 targets Year 12 completion rates.
               </p>
-              <p class="helper">Sherbrooke-Smith & Carlton, 2018; Australian Bureau of Statistics, 2023.</p>
+              <p class="helper reference">Sherbrooke-Smith & Carlton, 2018; Australian Bureau of Statistics, 2023.</p>
             </div>
             <div class="content-panel">
               <p class="eyebrow">Key finding — Royal Commission, 1991</p>
               <p>
                 "The most significant driver of Indigenous contact with the criminal justice system was their disadvantaged and unequal position in wider society."
               </p>
-              <p class="helper">Royal Commission into Aboriginal Deaths in Custody, 1991 (UNAA, 2021)</p>
+              <p class="helper reference">Royal Commission into Aboriginal Deaths in Custody, 1991 (UNAA, 2021)</p>
               <h3>BOCSAR, 2024.</h3>
               <p>
                 BOCSAR reports that Aboriginal people remain significantly overrepresented across all NSW criminal justice measures. Without upstream intervention, this pattern reproduces itself intergenerationally.
               </p>
-              <p class="helper">BOCSAR, 2024.</p>
+              <p class="helper reference">BOCSAR, 2024.</p>
             </div>
           </div>
+          <div class="partner-grid policy-cards">
+            <article class="partner">
+              <h3>Year 12 Completion</h3>
+              <p>In 2021, only <strong>39%</strong> of First Nations Australians aged 20+ had completed Year 12 — up from 19.4% in 2001, but far short of the 70% tertiary qualification target set for 2031.</p>
+              <p class="helper reference">ABS, 2021; AIHW, 2025.</p>
+            </article>
+            <article class="partner">
+              <h3>Government Investment</h3>
+              <p>The Australian Government committed $20 million to the Australian Indigenous Education Foundation for scholarships, plus $71 million for remote boarding schools including a new Indigenous Education and Research Centre.</p>
+              <p class="helper reference">Department of Education, 2025.</p>
+            </article>
+            <article class="partner">
+              <h3>Digital Access Gap</h3>
+              <p>28% of regional NSW students have meaningful digital inclusion. The Rural Access Gap program improved device ratios from 1:6 to 1:4 — an important foundation for a digital component to this program.</p>
+              <p class="helper reference">WSU, 2024; Digital NSW, 2026.</p>
+            </article>
+          </div>
         </div>
-      </section>
 
-      <section class="section">
-        <div class="plain-section">
-          <p class="eyebrow">Policy Context</p>
-          <h2>Closing the Gap and education outcomes</h2>
-          <p>
-            The National Agreement on Closing the Gap (2020) targets educational parity between First Nations and non-Indigenous Australians. Outcome 6 aims for students to "achieve their full learning potential"; Outcome 5 targets Year 12 completion rates.
-          </p>
+        <div class="background-panel" id="background-philosophy" role="tabpanel" data-background-panel="philosophy" hidden>
+          <div class="plain-section">
+            <p class="eyebrow">Philosophical Grounding</p>
+            <h2>The moral obligation to intervene</h2>
+          </div>
+          <div class="split-grid">
+            <article class="content-panel">
+              <p class="eyebrow">Rawlsian Justice</p>
+              <h3>A Theory of Justice — John Rawls (2009)</h3>
+              <p>
+                Rawls holds that social and economic inequalities may only be permitted if they result in the bettering of the least advantaged. Applied to the overrepresentation of First Nations Australians in the criminal justice system — a direct result of systemic social and economic inequality — existing conditions fail this test. The disadvantaged are not advantaged by present inequalities; they are further constrained by them.
+              </p>
+              <p>
+                Rawls' concept of the "veil of ignorance" — designing systems without knowing one's place within them — reveals Australia's criminal justice system as one constructed without such impartiality. The existence of organisations addressing the injustices that result from this gap is itself evidence of systemic failure.
+              </p>
+              <p class="helper reference">Rawls, J. (2009). A Theory of Justice. Harvard University Press.</p>
+            </article>
+            <article class="content-panel">
+              <p class="eyebrow">Structural Theory</p>
+              <h3>Structuration Theory — Giddens (1984)</h3>
+              <p>
+                Giddens holds that social structures are not external constraints imposed on individuals, but are reproduced through everyday institutional practices. In the context of incarceration, institutions including policing, courts, child protection and housing continually reproduce disadvantage for First Nations communities. The system does not simply reflect inequality — it perpetuates it.
+              </p>
+              <p>
+                When assessed against five power resources — political rights, official positions, coercive power, mobilisation power, and material power — Indigenous Australians are systematically disenfranchised across all five, leaving their capacity to reshape these structures largely out of reach.
+              </p>
+              <p class="helper reference">Winter, 2009 (as cited in background research); Giddens, A. (1984). The Constitution of Society. Polity Press.</p>
+            </article>
+          </div>
         </div>
-        <div class="partner-grid">
-          <article class="partner">
-            <h3>Year 12 Completion</h3>
-            <p>In 2021, only <strong>39%</strong> of First Nations Australians aged 20+ had completed Year 12 — up from 19.4% in 2001, but far short of the 70% tertiary qualification target set for 2031.</p>
-            <p class="helper">ABS, 2021; AIHW, 2025.</p>
-          </article>
-          <article class="partner">
-            <h3>Government Investment</h3>
-            <p>The Australian Government committed $20 million to the Australian Indigenous Education Foundation for scholarships, plus $71 million for remote boarding schools including a new Indigenous Education and Research Centre.</p>
-            <p class="helper">Department of Education, 2025.</p>
-          </article>
-          <article class="partner">
-            <h3>Digital Access Gap</h3>
-            <p>28% of regional NSW students have meaningful digital inclusion. The Rural Access Gap program improved device ratios from 1:6 to 1:4 — an important foundation for a digital component to this program.</p>
-            <p class="helper">WSU, 2024; Digital NSW, 2026.</p>
-          </article>
-        </div>
-      </section>
 
-      <section class="section tight">
-        <div class="plain-section">
-          <p class="eyebrow">International Precedent</p>
-          <h2>Global case studies</h2>
-        </div>
-        <div class="split-grid">
-          <article class="content-panel">
-            <p class="eyebrow">United States</p>
-            <h3>Perry Preschool Project</h3>
-            <p>
-              Long-term longitudinal research on the Perry Preschool Project demonstrated the value of sustained investment at key developmental transition points — rather than only after harm has occurred. Early educational engagement produced measurable reductions in later justice-system contact, supporting the logic of upstream cultural and educational intervention.
-            </p>
-          </article>
-          <article class="content-panel">
-            <p class="eyebrow">Canada</p>
-            <h3>Canadian Aboriginal Mentorship Program</h3>
-            <p>
-              This program demonstrated how long-term, culturally embedded mentorship from within communities reduces recidivism in ways that generic correctional programs do not. Community-grounded, identity-affirming support — the approach closest to this program's model — proved consistently more effective than institutional programs designed outside Indigenous contexts.
-            </p>
-          </article>
+        <div class="background-panel" id="background-international" role="tabpanel" data-background-panel="international" hidden>
+          <div class="plain-section">
+            <p class="eyebrow">International Precedent</p>
+            <h2>Global case studies</h2>
+          </div>
+          <div class="split-grid">
+            <article class="content-panel">
+              <p class="eyebrow">United States</p>
+              <h3>Perry Preschool Project</h3>
+              <p>
+                Long-term longitudinal research on the Perry Preschool Project demonstrated the value of sustained investment at key developmental transition points — rather than only after harm has occurred. Early educational engagement produced measurable reductions in later justice-system contact, supporting the logic of upstream cultural and educational intervention.
+              </p>
+            </article>
+            <article class="content-panel">
+              <p class="eyebrow">Canada</p>
+              <h3>Canadian Aboriginal Mentorship Program</h3>
+              <p>
+                This program demonstrated how long-term, culturally embedded mentorship from within communities reduces recidivism in ways that generic correctional programs do not. Community-grounded, identity-affirming support — the approach closest to this program's model — proved consistently more effective than institutional programs designed outside Indigenous contexts.
+              </p>
+            </article>
+          </div>
         </div>
       </section>
     </main>
@@ -156,5 +170,6 @@
         <span>This site is an informational prototype. Questions and contributions welcome via the Question Box.</span>
       </div>
     </footer>
+    <script src="site.js"></script>
   </body>
 </html>

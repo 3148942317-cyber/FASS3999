@@ -1,5 +1,92 @@
 const body = document.body;
 
+const visitorRoleLabels = {
+  student: "Viewing as: Student",
+  educator: "Viewing as: Educator / Elder",
+  partner: "Viewing as: Government / Partner Organisation",
+  community: "Viewing as: Community Member"
+};
+
+const questionRoleValues = {
+  student: "Student",
+  educator: "Educator",
+  partner: "Government or service partner",
+  community: "Community member"
+};
+
+const visitorRoleKey = "culturalConnectionVisitorRole";
+
+function readVisitorRole() {
+  try {
+    return window.localStorage.getItem(visitorRoleKey);
+  } catch {
+    return "";
+  }
+}
+
+function saveVisitorRole(role) {
+  try {
+    window.localStorage.setItem(visitorRoleKey, role);
+  } catch {
+    return;
+  }
+}
+
+function syncQuestionRole(role) {
+  const select = document.querySelector("#role");
+  if (!select || !questionRoleValues[role]) return;
+  select.value = questionRoleValues[role];
+}
+
+function updateVisitorPill(role) {
+  const pill = document.querySelector("[data-visitor-pill]");
+  const label = document.querySelector("[data-visitor-role]");
+  if (!pill || !label) return;
+  label.textContent = visitorRoleLabels[role] || "";
+  pill.hidden = !visitorRoleLabels[role];
+  syncQuestionRole(role);
+}
+
+function showEntryGate() {
+  const gate = document.querySelector("[data-entry-gate]");
+  if (!gate) return;
+  gate.classList.remove("hidden");
+  body.classList.add("gate-open");
+}
+
+function hideEntryGate() {
+  const gate = document.querySelector("[data-entry-gate]");
+  if (!gate) return;
+  gate.classList.add("hidden");
+  body.classList.remove("gate-open");
+}
+
+const entryGate = document.querySelector("[data-entry-gate]");
+if (entryGate) {
+  const storedRole = readVisitorRole();
+  if (visitorRoleLabels[storedRole]) {
+    updateVisitorPill(storedRole);
+    hideEntryGate();
+  } else {
+    showEntryGate();
+  }
+
+  entryGate.querySelectorAll("[data-role-choice]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const role = button.dataset.roleChoice;
+      if (!visitorRoleLabels[role]) return;
+      saveVisitorRole(role);
+      updateVisitorPill(role);
+      hideEntryGate();
+    });
+  });
+}
+
+const changeRoleButton = document.querySelector("[data-change-role]");
+if (changeRoleButton) {
+  changeRoleButton.addEventListener("click", showEntryGate);
+}
+
 const programPlans = {
   year7: {
     year: "Year 7 — Program Entry",
@@ -95,6 +182,29 @@ if (roleSwitcher) {
     tab.addEventListener("click", () => showRole(tab.dataset.roleTab));
   });
 }
+
+document.querySelectorAll("[data-background-tabs]").forEach((tabSet) => {
+  const tabs = [...tabSet.querySelectorAll("[data-background-tab]")];
+  const panels = [...tabSet.querySelectorAll("[data-background-panel]")];
+
+  function showBackgroundPanel(key) {
+    tabs.forEach((tab) => {
+      const selected = tab.dataset.backgroundTab === key;
+      tab.classList.toggle("active", selected);
+      tab.setAttribute("aria-selected", String(selected));
+    });
+
+    panels.forEach((panel) => {
+      const selected = panel.dataset.backgroundPanel === key;
+      panel.classList.toggle("active", selected);
+      panel.hidden = !selected;
+    });
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => showBackgroundPanel(tab.dataset.backgroundTab));
+  });
+});
 
 function escapeText(value) {
   const div = document.createElement("div");
