@@ -283,8 +283,13 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.7rem, 7vw, 5.8rem);
-  max-width: 11ch;
+  font-size: clamp(2rem, 4vw, 3.55rem);
+  max-width: 14.5ch;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3.55rem);
+  max-width: 14.5ch;
 }
 
 h1 em {
@@ -413,7 +418,7 @@ h1 em {
 
 .page-title h1 {
   max-width: 13ch;
-  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-size: clamp(2rem, 4vw, 3.55rem);
 }
 
 .intro-grid,
