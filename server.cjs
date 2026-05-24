@@ -7,7 +7,6 @@ const root = __dirname;
 const publicFiles = new Map([
   ["/", "index.html"],
   ["/index.html", "index.html"],
-  ["/background.html", "background.html"],
   ["/program.html", "program.html"],
   ["/resources.html", "resources.html"],
   ["/question-box.html", "question-box.html"],
