@@ -982,11 +982,6 @@ textarea {
   hyphens: none !important;
 }
 
-.reference::before {
-  content: "Reference: ";
-  color: var(--ink);
-  font-weight: 850;
-}
 
 .status {
   min-height: 24px;
